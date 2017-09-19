@@ -4,7 +4,8 @@ import {
   EMPLOYEE_UPDATE,
   EMPLOYEE_CREATE,
   EMPLOYEES_FETCH_SUCCESS,
-  EMPLOYEES_SAVE_SUCCESS
+  EMPLOYEES_SAVE_SUCCESS,
+  STATE_CLEAR
 } from './types';
 
 export const employeeUpdate = ({ prop, value }) => {
@@ -64,5 +65,11 @@ export const emplyeeDelete = ({ uid }) => {
       .then(() => {
         Actions.main({ type: 'reset' });
       });
+  };
+};
+
+export const stateClear = () => {
+  return {
+    type: STATE_CLEAR
   };
 };
